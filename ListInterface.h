@@ -12,9 +12,9 @@
 class ListInterface {
     public:
 
-        virtual void add(string& o) = 0;
+        virtual void add(string s) = 0;
 
-        virtual void add(string& o, int index) = 0;
+        virtual void add(string s, int index) = 0;
 
         virtual void clear() = 0;
 
@@ -26,7 +26,7 @@ class ListInterface {
 
         virtual string remove(int index) = 0;
 
-        virtual bool remove(string& o) = 0;
+        virtual bool remove(string s) = 0;
 
         virtual int size() = 0;
 };
