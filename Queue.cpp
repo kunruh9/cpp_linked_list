@@ -30,5 +30,6 @@ int Queue::size() {
 }
 
 void Queue::print(){
+    cout << "Queue: ";
     list.print();
 }

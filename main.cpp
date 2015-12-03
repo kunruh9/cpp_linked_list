@@ -6,30 +6,34 @@ using namespace std;
 
 int main() {
 
+    Stack stack = Stack();
+    Queue queue = Queue();
 
-    LinkedList list;
-
-    list.add("test1");
-    list.add("test2");
-    list.add("test3");
-
-    list.print();
-
-    list.remove(0);
-
-    list.print();
-
-    list.remove(1);
-
-    list.print();
-
-    Stack stack;
-    Queue queue;
-    queue.add("dog");
-    queue.add("cat");
-    queue.add("bird");
-    queue.print();
+    stack.push("dog");
+    stack.push("cat");
+    stack.push("bird");
+    stack.push("horse");
     stack.print();
+    cout << "Element on top of stack: " << stack.peek() << endl;
+    cout << "Pop " << stack.pop() << endl;
+    stack.print();
+    cout << "Cat is at position: " << stack.search("cat") << endl;
+    stack.clear();
+    stack.print();
+
+    cout << endl;
+
+    queue.offer("dog");
+    queue.offer("cat");
+    queue.offer("bird");
+    queue.offer("horse");
+    queue.print();
+    cout << "Element at front of Queue: " << queue.peek() << endl;
+    cout << "Dequeue " << queue.poll() << endl;
+    queue.print();
+    cout << "Horse is at position: " << queue.search("horse") << endl;
+    queue.clear();
+    queue.print();
 
     return 0;
 }

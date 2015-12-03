@@ -131,7 +131,7 @@ public:
 
     int find(string s){
         node* tmp = head;
-        for (int i = 0; i < listSize-1; i++ || tmp == nullptr) {
+        for (int i = 0; i < listSize; i++ || tmp == nullptr) {
             if (s.compare(tmp->s) == 0){
                 return i;
             }

@@ -21,6 +21,7 @@ int Stack::search(string s) {
 }
 
 void Stack::print() {
+    cout << "Stack: ";
     list.print();
 }
 
