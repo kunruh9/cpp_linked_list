@@ -6,20 +6,35 @@ using namespace std;
 
 int main() {
 
-    Stack stack;
-    Queue queue;
 
-    LinkedList list, list2;
+    LinkedList list;
 
+    list.add("test1");
+    list.add("test2");
+    list.add("test3");
 
-    list.add("one");
-    list.add("zero");
-    list.add("hi", 9);
-    list.add("car", 2);
-
-    list2.add(list.get(2));
-    list2.print();
     list.print();
+
+    list.remove(0);
+
+    list.print();
+
+    list.remove(1);
+
+    list.print();
+
+//    Stack stack;
+//    Queue queue;
+//
+//    stack.push("blue");
+//    stack.push("red");
+//    stack.push("yellow");
+//
+//    stack.print();
+//
+//    cout << stack.pop() << endl;
+//
+//    stack.print();
 
     return 0;
 }

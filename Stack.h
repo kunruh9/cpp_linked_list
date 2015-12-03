@@ -12,19 +12,24 @@ using namespace std;
 
 class Stack {
 
+public:
     virtual void push(string s);
 
     virtual string pop();
 
     virtual string peek();
 
-    virtual int search();
+    virtual int search(string s);
 
     virtual void print();
 
     virtual int size();
 
     virtual void clear();
+
+protected:
+    LinkedList list;
+
 };
 
 

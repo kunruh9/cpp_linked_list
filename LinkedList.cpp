@@ -82,13 +82,16 @@ public:
 
     string remove(int index) {
         node* nodeCurr = head;
-        node* nodePrev = head;
+        node* nodePrev = nullptr;
         while (index--) {
             nodePrev = nodeCurr;
             nodeCurr = nodeCurr->next;
         }
         string s = nodeCurr->s;
-        nodePrev->next = nodeCurr->next;
+        if (nodePrev != nullptr)
+            nodePrev->next = nodeCurr->next;
+        else
+            head = nodeCurr->next;
         deleteNode(nodeCurr);
         listSize--;
         return s;
@@ -124,6 +127,18 @@ public:
             cout << "["<< i << ": \"" << get(i) << "\"] => ";
         }
         cout << "nil" << endl;
+    }
+
+    int find(string s){
+        node* tmp = head;
+        for (int i = 0; i < listSize-1; i++ || tmp == nullptr) {
+            if (s.compare(tmp->s) == 0){
+                return i;
+            }
+            tmp = tmp->next;
+        }
+
+        return -1;
     }
 
 protected:

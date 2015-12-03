@@ -5,30 +5,30 @@
 #include "Stack.h"
 
 void Stack::push(string s) {
-    //TODO
+    list.add(s);
 }
 
 string Stack::pop() {
-    //TODO
+    return list.remove(0);
 }
 
 string Stack::peek() {
-    //TODO
+    return list.get(0);
 }
 
-int Stack::search() {
-    //TODO
+int Stack::search(string s) {
+    return list.find(s);
 }
 
 void Stack::print() {
-    //TODO
+    list.print();
 }
 
 int Stack::size() {
-    //TODO
+    return list.size();
 }
 
 void Stack::clear() {
-    //TODO
+    list.clear();
 }
 
