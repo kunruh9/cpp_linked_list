@@ -1,11 +1,16 @@
 #include <iostream>
-#include "LinkedList.cpp"
+#include "Stack.h"
+#include "Queue.h"
 
 using namespace std;
 
 int main() {
 
+    Stack stack;
+    Queue queue;
+
     LinkedList list, list2;
+
 
     list.add("one");
     list.add("zero");
@@ -15,16 +20,6 @@ int main() {
     list2.add(list.get(2));
     list2.print();
     list.print();
-
-//    list.printList();
-//
-//    list.remove("zero");
-//
-//    list.printList();
-//
-    list.clear();
-//
-//    list.printList();
 
     return 0;
 }

@@ -2,6 +2,9 @@
 // Created by Kyle Unruh on 11/30/15.
 //
 
+#ifndef LINKEDLIST_CPP
+#define LINKEDLIST_CPP
+
 #include "ListInterface.h"
 
 
@@ -127,7 +130,7 @@ protected:
     typedef struct node {
         string s;
         node* next;
-    };
+    } node;
     node* head;
     int listSize;
 
@@ -136,3 +139,5 @@ protected:
         n = NULL;
     }
 };
+
+#endif
