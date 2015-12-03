@@ -23,18 +23,13 @@ int main() {
 
     list.print();
 
-//    Stack stack;
-//    Queue queue;
-//
-//    stack.push("blue");
-//    stack.push("red");
-//    stack.push("yellow");
-//
-//    stack.print();
-//
-//    cout << stack.pop() << endl;
-//
-//    stack.print();
+    Stack stack;
+    Queue queue;
+    queue.add("dog");
+    queue.add("cat");
+    queue.add("bird");
+    queue.print();
+    stack.print();
 
     return 0;
 }

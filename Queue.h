@@ -11,6 +11,8 @@
 using namespace std;
 
 class Queue {
+    
+public:
 
     virtual void offer(string s);
 
@@ -20,10 +22,16 @@ class Queue {
 
     virtual void clear();
 
-    virtual int search();
+    virtual int search(string s);
 
     virtual int size();
+    
+    virtual void print();
+    
+protected:
+    LinkedList list;
 };
 
 
 #endif //LINKEDLIST_QUEUE_H
+

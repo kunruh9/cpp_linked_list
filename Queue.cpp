@@ -1,30 +1,34 @@
 //
 // Created by Kyle Unruh on 12/2/15.
-//
+//FIFO
 
 #include "Queue.h"
 
 
-int Queue::search() {
-    //TODO
+int Queue::search(string s) {
+    return list.find(s);
 }
 
 void Queue::clear() {
-    //TODO
+    list.clear();
 }
 
 void Queue::offer(string s) {
-    //TODO
+    list.add(s, list.size());
 }
 
 string Queue::peek() {
-    //TODO
+    return list.get(0);
 }
 
 string Queue::poll() {
-    //TODO
+    return list.remove(0);
 }
 
 int Queue::size() {
-    //TODO
+    return list.size();
+}
+
+void Queue::print(){
+    list.print();
 }
