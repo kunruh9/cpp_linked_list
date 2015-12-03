@@ -5,7 +5,9 @@
 #ifndef LINKEDLIST_LISTINTERFACE_H
 #define LINKEDLIST_LISTINTERFACE_H
 
-#include "Iterator.h"
+#include <iostream>
+
+using namespace std;
 
 // abstract class for Linked Lists
 
@@ -21,8 +23,6 @@ class ListInterface {
         virtual string get(int index) = 0;
 
         virtual bool isEmpty() = 0;
-
-        virtual Iterator * iterator() = 0;
 
         virtual string remove(int index) = 0;
 

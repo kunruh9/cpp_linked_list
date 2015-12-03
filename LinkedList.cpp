@@ -51,15 +51,21 @@ public:
     void clear() {
         node* nodePtr = head;
         node* tmp = nullptr;
+        if (nodePtr == nullptr)
+            return;
         while (nodePtr->next != nullptr) {
             tmp = nodePtr;
             nodePtr = nodePtr->next;
-            delete tmp;
+            deleteNode(tmp);
         }
         head = nullptr;
+        listSize = 0;
     }
 
     string get(int index) {
+        if (index > listSize-1)
+            return "";
+
         node* nodePtr = head;
         while (index--) {
             nodePtr = nodePtr->next;
@@ -71,10 +77,6 @@ public:
         return listSize == 0;
     }
 
-    Iterator* iterator() {
-        return nullptr;
-    }
-
     string remove(int index) {
         node* nodeCurr = head;
         node* nodePrev = head;
@@ -84,22 +86,41 @@ public:
         }
         string s = nodeCurr->s;
         nodePrev->next = nodeCurr->next;
-//        delete nodeCurr;
+        deleteNode(nodeCurr);
+        listSize--;
         return s;
     }
 
     bool remove(string s) {
-        node* nodePtr = head;
-        while (nodePtr != nullptr) {
-            if (s.compare(nodePtr->s))
+        node* nodeCurr = head;
+        node* nodePrev = nullptr;
+        while (nodeCurr != nullptr) {
+            if (s.compare(nodeCurr->s) == 0) {
+                if (nodePrev == nullptr) {
+                    head = nodeCurr->next;
+                } else {
+                    nodePrev->next = nodeCurr->next;
+                }
+                deleteNode(nodeCurr);
+                listSize--;
                 return true;
-            nodePtr = nodePtr->next;
+            }
+            nodePrev = nodeCurr;
+            nodeCurr = nodeCurr->next;
         }
         return false;
     }
 
     int size() {
         return listSize;
+    }
+
+    void print() {
+        cout << "head => ";
+        for (int i = 0; i < listSize; i++) {
+            cout << "["<< i << ": \"" << get(i) << "\"] => ";
+        }
+        cout << "nil" << endl;
     }
 
 protected:
@@ -109,4 +130,9 @@ protected:
     };
     node* head;
     int listSize;
+
+    void deleteNode(node* n) {
+        delete n;
+        n = NULL;
+    }
 };

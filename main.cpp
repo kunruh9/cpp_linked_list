@@ -5,20 +5,26 @@ using namespace std;
 
 int main() {
 
-    LinkedList list;
+    LinkedList list, list2;
 
     list.add("one");
     list.add("zero");
     list.add("hi", 9);
     list.add("car", 2);
-//    cout << list.remove(1);
 
-    int size = list.size();
-    for (int i = 0; i < size; i++) {
-        cout << "[" << i << "] => \"" << list.get(i) << "\", ";
-    }
+    list2.add(list.get(2));
+    list2.print();
+    list.print();
 
-    cout << endl;
+//    list.printList();
+//
+//    list.remove("zero");
+//
+//    list.printList();
+//
+    list.clear();
+//
+//    list.printList();
 
     return 0;
 }
